@@ -1,0 +1,217 @@
+
+// Semantic UI
+.NavBar {
+  // Probably better to put this in the 900's because
+  //   Leaflet has default map panes with specific z indexes:
+  //   http://leafletjs.com/reference-1.2.0.html
+  //   Max is 700.
+  z-index: 990;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+
+  background-color: #282828;
+
+  $default-color: #aaa;
+  $default-padding: 0.2rem;
+  $side-margin: 1.4rem;
+  $font-size: 0.87rem;
+
+  color: $default-color;
+
+  .wide, .narrow {
+    padding: 0 $side-margin;
+
+    ul {
+      // ...
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      li {
+        a {
+          // ...
+          text-decoration: none;
+
+          font-size: $font-size;
+          color: $default-color;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 45%;
+
+    .wide {
+      display: none;
+    }
+
+    .narrow {
+      $default-padding-2x: $default-padding * 2;
+      margin: 0 $default-padding-2x;
+
+      button {
+        display: block;
+        padding: $default-padding-2x;
+        border: none;
+        background: none;
+
+        &:focus {
+          outline: none;
+        }
+
+        i {
+          color: $default-color;
+          &:hover {
+            cursor: pointer;
+            color: #fff;
+          }
+        }
+      }
+
+      ul {
+        padding: 0 $default-padding-2x $default-padding-2x $default-padding-2x;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 70%;
+
+    .wide {
+      ul {
+        display: inline-block;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          padding: $default-padding;
+          margin-right: 0.5rem;
+        }
+
+        &.left {
+          // Why bigger? Because more items on left usually.
+          width: 70%;
+        }
+
+        &.right {
+          width: 30%;
+          text-align: right;
+        }
+      }
+    }
+
+    .narrow {
+      display: none;
+    }
+  }
+}
+
+// // Bootstrap
+// .NavBar {
+//   z-index: 99;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   margin: auto;
+
+//   background-color: #282828;
+
+//   $default-color: #aaa;
+//   $default-padding: 0.2rem;
+//   $side-margin: 1.4rem;
+//   $font-size: 1.2rem;
+
+//   color: $default-color;
+
+//   .wide, .narrow {
+//     padding: 0 $side-margin;
+
+//     ul {
+//       // ...
+//       list-style: none;
+//       padding-left: 0;
+//       margin-bottom: 0;
+
+//       li {
+//         a {
+//           // ...
+//           text-decoration: none;
+
+//           font-size: $font-size;
+//           color: $default-color;
+
+//           &:hover {
+//             color: #fff;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     width: 45%;
+
+//     .wide {
+//       display: none;
+//     }
+
+//     .narrow {
+//       $default-padding-2x: $default-padding * 2;
+//       margin: 0 $default-padding-2x;
+//       button {
+//         display: block;
+//         padding: $default-padding-2x;
+//         border: none;
+//         background: none;
+
+//         &:focus {
+//           outline: none;
+//         }
+//       }
+
+//       ul {
+//         padding: 0 $default-padding-2x $default-padding-2x $default-padding-2x;
+//       }
+//     }
+//   }
+
+//   @media (min-width: 768px) {
+//     width: 70%;
+
+//     .wide {
+//       ul {
+//         display: inline-block;
+//         padding: $default-padding;
+
+//         li {
+//           display: inline-block;
+//           padding: $default-padding;
+//           margin-right: 2rem;
+//         }
+
+//         &.left {
+//           // Why bigger? Because more items on left usually.
+//           width: 99%;
+//         }
+
+//         &.right {
+//           width: 1%;
+//           text-align: right;
+//         }
+//       }
+//     }
+
+//     .narrow {
+//       display: none;
+//     }
+//   }
+// }

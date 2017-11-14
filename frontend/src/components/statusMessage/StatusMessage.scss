@@ -1,0 +1,35 @@
+
+.StatusMessage {
+  z-index: 52;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+
+  // ...
+  padding: 1rem;
+
+  background-color: rgba(248, 248, 249, 0.80);
+  border: 1px solid #C9CACB;
+
+  &.success {
+    background-color: #339933;
+  }
+
+  &.error {
+    background-color: #FFF6F6;
+    border: 1px solid #E0B4B4;
+  }
+
+  border-radius: 0.5rem;
+
+  .children {
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  // .fields {
+  //   // For the dummies
+  //   visibility: hidden;
+  // }
+}

@@ -1,0 +1,259 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,800);
+
+// !! bm* names => BurgerMenu !! //
+
+// *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+// html {
+//   height: 100%;
+// }
+
+// body {
+//   height: 100%;
+//   background: #444;
+//   color: #fffce1;
+//   font-family: 'Raleway', Arial, sans-serif;
+// }
+
+// #app {
+//   height: 100%;
+// }
+
+// main {
+//   height: 100%;
+//   padding: 3em 2em;
+//   text-align: center;
+//   background: #b4bad2;
+//   overflow: scroll;
+// }
+
+// @media screen and (max-width: 40em) {
+//   main {
+//     font-size: 80%;
+//   }
+
+//   h1 {
+//     padding-top: 1em;
+//     font-size: 2.5em;
+//   }
+
+//   .demo-buttons {
+//     max-width: 900px;
+//     padding: 0 2em;
+//   }
+// }
+
+//
+// Burger menu custom styles
+//
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+
+  top: 90px;
+  // top: 36px;
+}
+
+.right .bm-burger-button {
+  left: initial;
+  right: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+$text-color: #dad9cf;
+// $text-color: #b8b7ad;
+$anchor-color: $text-color;
+$anchor-hover-focus-color: #eee;
+// $anchor-hover-focus-color: #c94e50;
+
+$background-color: #E07139;
+
+// ... the "container" class
+.bm-menu {
+  background: $background-color;
+
+  a {
+    color: $anchor-color;
+
+    &:hover,
+    &:focus { color: $anchor-hover-focus-color; }
+  }
+
+  // ...
+  // Centering...
+  // https://stackoverflow.com/questions/7055393/center-image-using-text-align-center
+  // img {
+  //     display: block;
+  //     position: relative;
+  //     left: -50%;
+  // }
+  // .parent {
+  //     position: absolute;
+  //     left: 50%;
+  // }
+  .user-segment {
+    background: $background-color;
+    text-align: center;
+    border: 2px solid #DAD9CF;
+
+    .user-image {
+      img {
+        max-width: 200px;
+        max-height: 140px;
+        width: auto;
+        height: auto;
+
+        border-radius: 7px;
+      }
+    }
+
+    // Semantic UI
+    .ui.header {
+      color: #fff;
+      // color: #009195;
+      font-size: 20px;
+      letter-spacing: 1px;
+
+      .sub.header {
+        margin-top: 14px;
+        color: $text-color;
+        font-size: 17px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .user-info {
+    margin-top: 14px;
+    h4 { color: $anchor-color; }
+    button {
+      i {
+        // HACK: to nudge icon vertically centered.
+        padding-top: 6px;
+      }
+    }
+  }
+}
+
+.bm-item-list a {
+  padding: 0.8em;
+
+  span {
+    margin-left: 10px;
+    font-weight: 700;
+  }
+}
+
+//
+// Mixins
+//
+@mixin menu-1 {
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  .bm-menu {
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+}
+
+@mixin menu-2 {
+  .bm-cross {
+    background: #999;
+  }
+
+  .bm-menu {
+    padding: 3.4em 1em 0;
+  }
+
+  a { padding: 1em; }
+
+  i {
+    font-size: 1.7em;
+    vertical-align: middle;
+  }
+}
+
+@mixin menu-3 {
+  .bm-cross {
+    background: #888;
+  }
+
+  .bm-menu {
+    padding: 2em 1em;
+    font-size: 1.15em;
+  }
+
+  i { opacity: 0.5; }
+
+  span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75em;
+  }
+}
+
+@mixin menu-4 {
+  .bm-cross {
+    background: #888;
+  }
+
+  a {
+    padding: 1em;
+    text-transform: uppercase;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+
+    span {
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 -1px rgba(0, 0, 0, 0);
+      color: #b8b7ad;
+    }
+  }
+}
+
+// ... I added this.
+@mixin top-z-index {
+  z-index: 990 !important;
+}
+
+#slide,
+#stack {
+  @include top-z-index;
+  @include menu-1;
+}
+
+#bubble,
+#push {
+  @include top-z-index;
+  @include menu-2;
+}
+
+#elastic {
+  @include menu-3;
+}
+
+#scaleDown,
+#scaleRotate,
+#pushRotate,
+#fallDown {
+  @include top-z-index;
+  @include menu-4;
+}

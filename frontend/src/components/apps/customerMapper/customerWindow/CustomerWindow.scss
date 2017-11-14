@@ -1,0 +1,152 @@
+
+.CustomerWindow {
+  // Probably better to put this in the 900's because
+  //   Leaflet has default map panes with specific z indexes:
+  //   http://leafletjs.com/reference-1.2.0.html
+  //   Max is 700.
+  z-index: 900;
+  position: absolute;
+
+  top: 10%;
+
+  @media (min-width: 768px) {
+    top: 10%;
+    left: 25%;
+    width: 70%;
+  }
+
+  $blue: #0070b7;
+  $content-bg-color: #fff;
+  $text-color: #fff;
+  $horizontal-space: 1rem;
+  $main-content-font-size: 0.85rem;
+
+  background-color: $content-bg-color;
+
+  .header {
+    color: $text-color;
+    background-color: $blue;
+    font-size: 1.7rem;
+    padding: 0 $horizontal-space;
+  }
+
+  .content {
+    padding: 0 $horizontal-space;
+
+    .left-customer-info {
+    }
+
+    // // SUI
+    // .tabular.menu {
+    //   // background-color: $content-bg-color;
+    // }
+
+    .left {
+      padding-right: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+
+      .vehicle-info {
+        font-size: $main-content-font-size;
+        border: none;
+        box-shadow: none;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .right {
+      padding-left: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+
+      .top {
+        font-size: $main-content-font-size;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 0;
+        padding-bottom: 0.4rem;
+        padding-right: 0;
+
+        .left-sub {
+          padding-left: 0;
+          padding-right: 0;
+
+          table {
+            text-align: center;
+            border: none;
+            td {
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+
+          .crm-button {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+          }
+        }
+
+        .middle-sub {
+          padding-left: 0.2rem;
+          padding-right: 0.2rem;
+
+          table {
+            text-align: center;
+            border: none;
+
+            td {
+              text-align: left;
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+        }
+
+        .right-sub {
+          tr:nth-child(2) {
+            background-color: #daecf6;
+          }
+        }
+      }
+
+      .bottom {
+        font-size: $main-content-font-size;
+        border: none;
+        box-shadow: none;
+        margin-top: 0;
+        padding-top: 0.4rem;
+        padding-right: 0;
+
+        label {
+          font-size: $main-content-font-size;
+        }
+
+        // SUI
+        .column {
+          padding-left: 0.2rem;
+          padding-right: 0.2rem;
+        }
+      }
+    }
+
+    .bottom-buttons {
+      background-color: $blue;
+      text-align: center;
+
+      .row {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .column {
+          border: 1px solid $text-color;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          a {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}

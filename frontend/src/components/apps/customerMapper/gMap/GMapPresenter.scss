@@ -1,0 +1,36 @@
+
+.GMapPresenterWrapper {
+  // .ui.menu {
+  //   margin: 0;
+  // }
+
+  .search {
+    height: 5vh;
+    margin: 0;
+    border-radius: 0;
+
+    $padding-top: 0.24rem;
+    $sep-padding: 0.24rem;
+    .by-city-and-state {
+      padding-top: $padding-top;
+      padding-right: $sep-padding;
+    }
+
+    .by-zip {
+      padding-top: $padding-top;
+      padding-left: $sep-padding;
+    }
+  }
+
+  #GMapPresenter {
+    height: 95vh;
+    position: relative;
+
+    .infobox {
+      .name {
+        font-weight: bolder;
+        color: #A3CCFF;
+      }
+    }
+  }
+}

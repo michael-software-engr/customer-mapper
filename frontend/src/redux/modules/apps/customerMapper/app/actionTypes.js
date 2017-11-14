@@ -1,0 +1,25 @@
+
+const SET_PREV_ROUTING = 'app/customerMapper/app/SET_PREV_ROUTING';
+const SET_IS_HANDLING_INPUT_CHANGE = 'app/customerMapper/app/SET_IS_HANDLING_INPUT_CHANGE';
+
+const SET_INPUT_FORM_VISIBILITY = 'app/customerMapper/app/SET_INPUT_FORM_VISIBILITY';
+const SET_VEHICLE_FORM_VISIBILITY = 'app/customerMapper/app/SET_VEHICLE_FORM_VISIBILITY';
+
+const SET_IS_POLLING = 'app/customerMapper/app/SET_IS_POLLING';
+const SET_IS_SUBMITTING = 'app/customerMapper/app/SET_IS_SUBMITTING';
+
+const SET_CUSTOMER_WINDOW = 'app/customerMapper/app/SET_CUSTOMER_WINDOW';
+
+const actionTypes = {
+  SET_PREV_ROUTING,
+  SET_IS_HANDLING_INPUT_CHANGE,
+
+  SET_INPUT_FORM_VISIBILITY,
+  SET_VEHICLE_FORM_VISIBILITY,
+  SET_IS_POLLING,
+  SET_IS_SUBMITTING,
+
+  SET_CUSTOMER_WINDOW
+};
+
+export default actionTypes;
